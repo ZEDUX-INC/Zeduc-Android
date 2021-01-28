@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "856783350655",
+    "project_id": "zedux-d1077",
+    "storage_bucket": "zedux-d1077.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856783350655:android:607fc28ac09745b09e884a",
+        "android_client_info": {
+          "package_name": "com.zedux"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "856783350655-dmnkfg79jqcbmkeog4vpecumduk1qshp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zedux",
+            "certificate_hash": "a5d66ee4138ffd8c225cbaebaf887f6abc948c54"
+          }
+        },
+        {
+          "client_id": "856783350655-oraniop0nvojue97k3fiu1vo1g5ndb2v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQBYoHjO0IaVqs7kzajm9_7uJ8LCK-pzM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "856783350655-oraniop0nvojue97k3fiu1vo1g5ndb2v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/nav_home"
+            android:title="Home"
+            android:icon="@drawable/ic_home_selector"/>
+
+    <item
+            android:id="@+id/nav_community"
+            android:title="Community"
+            android:icon="@drawable/ic_community_selector"/>
+
+    <item
+            android:id="@+id/nav_inbox"
+            android:title="Inbox"
+            android:icon="@drawable/ic_inbox_selector"/>
+
+    <item
+            android:id="@+id/nav_profile"
+            android:title="Profile"
+            android:icon="@drawable/ic_profile_selector"/>
+
+
+</menu>

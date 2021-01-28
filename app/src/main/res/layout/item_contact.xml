@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+            android:id="@+id/img_profile_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/img_profile_bg"
+            android:padding="5dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/profile_sample"/>
+
+
+    </RelativeLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Anita"
+            android:textSize="12sp"
+            android:fontFamily="@font/gilroy_regular"
+            android:textColor="@color/color_89a_blue"
+            app:layout_constraintTop_toBottomOf="@id/img_profile_bg"
+            app:layout_constraintStart_toStartOf="@id/img_profile_bg"
+            app:layout_constraintEnd_toEndOf="@id/img_profile_bg"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

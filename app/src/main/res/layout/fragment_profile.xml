@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Account"
+                    android:textColor="@color/color_black"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginTop="35dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+            />
+
+            <ImageView
+                    android:id="@+id/image_send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_send"
+                    android:layout_marginEnd="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_account"/>
+
+            <RelativeLayout
+                    android:id="@+id/img_profile_bg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/img_profile_bg"
+                    android:padding="5dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginStart="28dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_account"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="46dp"
+                        android:layout_height="46dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/profile_sample"/>
+
+
+            </RelativeLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Anita Sanchez"
+                    android:textColor="@color/color_black"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginStart="17dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_account"
+                    app:layout_constraintStart_toEndOf="@id/img_profile_bg"
+            />
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit Profile"
+                    android:textColor="@color/color_89a_blue"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginStart="17dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_name"
+                    app:layout_constraintStart_toEndOf="@id/img_profile_bg"
+            />
+
+            <!--      start ->  Contacts -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_contact_bg"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/img_white_bg"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginStart="28dp"
+                    app:layout_constraintTop_toBottomOf="@id/img_profile_bg"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_contact_profile"
+                    app:layout_constraintTop_toTopOf="@id/img_contact_bg"
+                    app:layout_constraintStart_toStartOf="@id/img_contact_bg"
+                    app:layout_constraintEnd_toEndOf="@id/img_contact_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/img_contact_bg"
+            />
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_contacts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/img_contact_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/img_contact_bg"
+                    android:layout_marginStart="17dp"
+                    app:layout_constraintStart_toEndOf="@id/img_contact_bg"
+                    android:text="Contacts"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textColor="@color/color_556_blue"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_none"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/img_contact_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/img_contact_bg"
+                    android:layout_marginEnd="36dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="None"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textColor="@color/color_89a_blue"/>
+            <!--    end    -->
+
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="44dp"
+                    android:layout_marginStart="26dp"
+                    android:text="Settings"
+                    android:textColor="@color/color_black"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/gilroy_regular"
+                    app:layout_constraintTop_toBottomOf="@id/img_contact_bg"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+
+            <!--      start ->  Contacts -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_privacy_bg"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/img_white_bg"
+                    android:layout_marginTop="21dp"
+                    android:layout_marginStart="28dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_settings"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_privacy"
+                    app:layout_constraintTop_toTopOf="@id/img_privacy_bg"
+                    app:layout_constraintStart_toStartOf="@id/img_privacy_bg"
+                    app:layout_constraintEnd_toEndOf="@id/img_privacy_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/img_privacy_bg"
+            />
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_privacy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/img_privacy_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/img_privacy_bg"
+                    android:layout_marginStart="17dp"
+                    app:layout_constraintStart_toEndOf="@id/img_privacy_bg"
+                    android:text="Privacy and Security"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textColor="@color/color_556_blue"/>
+
+            <ImageView
+                    android:id="@+id/privacy_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/img_privacy_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/img_privacy_bg"
+                    android:layout_marginEnd="25dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/ic_privacy_drawable"/>
+            <!--    end    -->
+
+            <!--      start ->  Contacts -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_appearance_bg"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/img_white_bg"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="28dp"
+                    app:layout_constraintTop_toBottomOf="@id/img_privacy_bg"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_appearance"
+                    app:layout_constraintTop_toTopOf="@id/img_appearance_bg"
+                    app:layout_constraintStart_toStartOf="@id/img_appearance_bg"
+                    app:layout_constraintEnd_toEndOf="@id/img_appearance_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/img_appearance_bg"
+            />
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_appearance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/img_appearance_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/img_appearance_bg"
+                    android:layout_marginStart="17dp"
+                    app:layout_constraintStart_toEndOf="@id/img_contact_bg"
+                    android:text="Appearance"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textColor="@color/color_556_blue"/>
+
+            <!--    end    -->
+
+            <!--      start ->  Contacts -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_notifications_bg"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/img_white_bg"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="28dp"
+                    app:layout_constraintTop_toBottomOf="@id/img_appearance_bg"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_notification"
+                    app:layout_constraintTop_toTopOf="@id/img_notifications_bg"
+                    app:layout_constraintStart_toStartOf="@id/img_notifications_bg"
+                    app:layout_constraintEnd_toEndOf="@id/img_notifications_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/img_notifications_bg"
+            />
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_notifications"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/img_notifications_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/img_notifications_bg"
+                    android:layout_marginStart="17dp"
+                    app:layout_constraintStart_toEndOf="@id/img_contact_bg"
+                    android:text="Notifications"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textColor="@color/color_556_blue"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/toggle_notifications"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/img_notifications_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/img_notifications_bg"
+                    android:layout_marginEnd="25dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="None"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textColor="@color/color_89a_blue"/>
+            <!--    end    -->
+
+            <!--      start ->  Contacts -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_need_help"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/img_white_bg"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="28dp"
+                    app:layout_constraintTop_toBottomOf="@id/img_notifications_bg"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_need_help"
+                    app:layout_constraintTop_toTopOf="@id/img_need_help"
+                    app:layout_constraintStart_toStartOf="@id/img_need_help"
+                    app:layout_constraintEnd_toEndOf="@id/img_need_help"
+                    app:layout_constraintBottom_toBottomOf="@id/img_need_help"
+            />
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_need_help"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/img_need_help"
+                    app:layout_constraintBottom_toBottomOf="@id/img_need_help"
+                    android:layout_marginStart="17dp"
+                    app:layout_constraintStart_toEndOf="@id/img_need_help"
+                    android:text="Need help?"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textColor="@color/color_556_blue"/>
+
+            <!--    end    -->
+
+            <!--      start ->  Contacts -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_sign_out_bg"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_sign_out_bg"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="28dp"
+                    app:layout_constraintTop_toBottomOf="@id/img_need_help"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_sign_out"
+                    app:layout_constraintTop_toTopOf="@id/img_sign_out_bg"
+                    app:layout_constraintStart_toStartOf="@id/img_sign_out_bg"
+                    app:layout_constraintEnd_toEndOf="@id/img_sign_out_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/img_sign_out_bg"
+            />
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_sign_out"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/img_sign_out_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/img_sign_out_bg"
+                    android:layout_marginStart="17dp"
+                    app:layout_constraintStart_toEndOf="@id/img_sign_out_bg"
+                    android:text="Sign out"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textColor="@color/color_e27_pink"/>
+
+            <!--    end    -->
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+
+</layout>

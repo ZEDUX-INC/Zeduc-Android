@@ -1,0 +1,54 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/color_52e_blue</item>
+        <item name="colorPrimaryDark">@color/color_52e_blue</item>
+        <item name="colorAccent">@color/color_fd8_orange</item>
+        <item name="android:textColorHint">@color/color_white</item>
+        <item name="android:editTextColor">@color/color_white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/color_ddd_gray</item>
+
+
+    </style>
+
+    <style name="customChip" parent="Widget.MaterialComponents.Chip.Choice">
+
+        <item name="chipIconVisible">false</item>
+        <item name="checkedIconVisible">false</item>
+        <item name="closeIconVisible">true</item>
+
+        <item name="checkedIcon">@null</item>
+
+        <item name="closeIcon">@drawable/chip_end_selector</item>
+
+        <item name="android:textColor">@color/chip_text_color</item>
+
+        <item name="chipBackgroundColor">@color/chip_bg_color</item>
+        <item name="rippleColor">@color/mtrl_choice_chip_ripple_color</item>
+        <item name="android:selectable">true</item>
+        <item name="android:checkable">true</item>
+    </style>
+
+    <style name="customChipCommunity">
+
+        <item name="fontFamily">@font/gilroy_regular</item>
+        <item name="android:textColor">@color/color_20a_blue</item>
+        <item name="android:backgroundTint">@color/color_fef_white</item>
+
+    </style>
+
+    <style name="customSearch" parent="Widget.AppCompat.SearchView">
+        <item name="android:textColorHint">@color/color_black</item>
+        <item name="android:textColor">@color/color_black</item>
+    </style>
+    
+    <style name="customImageView" parent="AppTheme">
+        <item name="cornerFamilyBottomLeft">rounded</item>
+<!--        <item name="cornerFamily">rounded</item>-->
+<!--        <item name="cornerSize">50dp</item>-->
+        <item name="cornerSizeBottomLeft">48dp</item>
+    </style>
+
+</resources>

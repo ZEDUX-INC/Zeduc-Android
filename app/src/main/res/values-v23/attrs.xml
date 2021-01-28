@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ProfileTextView">
+        <attr name="circleColor" format="color"/>
+        <attr name="circleLabel" format="string"/>
+        <attr name="labelColor" format="color"/>
+        <attr name="labelSize" format="dimension"/>
+        <attr name="lineColor" format="color"/>
+    </declare-styleable>
+
+</resources>

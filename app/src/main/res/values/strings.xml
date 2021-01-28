@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Zedux</string>
+    <string name="prev">Prev</string>
+    <string name="next">Next</string>
+    <string name="tutor">Tutor</string>
+    <string name="continue_learning">Let’s continue\nlearning</string>
+    <string name="password">Password</string>
+    <string name="e_mail">E-mail</string>
+    <string name="welcome_learning">Welcome to\nlearning with us</string>
+    <string name="select_your_courses">Select your\ncourses</string>
+    <string name="select_description">This will help us tailor contents specific\nto you only.</string>
+    <string name="community_hint_search">Search Community</string>
+</resources>

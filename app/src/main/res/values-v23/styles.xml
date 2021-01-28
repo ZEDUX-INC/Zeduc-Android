@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/color_52e_blue</item>
+        <item name="colorPrimaryDark">@color/color_52e_blue</item>
+        <item name="colorAccent">@color/color_fd8_orange</item>
+        <item name="android:textColorHint">@color/color_white</item>
+        <item name="android:editTextColor">@color/color_white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/color_ddd_gray</item>
+
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_community"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inbox"
+                    android:textColor="@color/color_black"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginTop="35dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+            />
+
+            <ImageView
+                    android:id="@+id/image_send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_inbox_edit"
+                    android:layout_marginEnd="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_community"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_community"/>
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:src="@drawable/profile_sample"
+                    android:layout_marginStart="24dp"
+                    app:layout_constraintTop_toTopOf="@id/tv_community"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_community"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.appcompat.widget.SearchView
+                    android:id="@+id/search_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="23dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginEnd="35dp"
+                    android:queryHint="Search Community"
+                    android:queryBackground="@android:color/transparent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_community"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:fabCustomSize="46dp"
+                    app:layout_constraintTop_toBottomOf="@id/search_view"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="21dp"
+                    android:layout_marginStart="24dp"
+                    app:elevation="0dp"
+                    app:backgroundTint="@color/color_fff_white"
+                    app:tint="@color/color_white"
+                    app:srcCompat="@drawable/ic_fab_add"
+                    android:tint="#FFFFFF"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Add"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textColor="@color/color_89a_blue"
+                    app:layout_constraintTop_toBottomOf="@id/fab_add"
+                    app:layout_constraintStart_toStartOf="@id/fab_add"
+                    app:layout_constraintEnd_toEndOf="@id/fab_add"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_contacts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    app:layout_constraintStart_toEndOf="@id/fab_add"
+                    app:layout_constraintTop_toTopOf="@id/fab_add"
+                    app:layout_constraintBottom_toBottomOf="@id/fab_add"
+                    android:visibility="invisible"
+                    android:orientation="horizontal"
+                    tools:listitem="@layout/item_contact"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginStart="24dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_add"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textColor="@color/color_black"
+                    android:textSize="14sp"
+                    android:text="ALL"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_contact_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/tv_all"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:listitem="@layout/item_contact_row"/>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</layout>
+

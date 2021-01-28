@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <ImageView
+                android:id="@+id/img_profile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/img_home_sample"
+                android:background="@drawable/home_profile_bg"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                app:layout_constraintTop_toTopOf="@id/img_profile"
+                app:layout_constraintStart_toEndOf="@id/img_profile"
+                android:text="Hello Emela,"
+                android:textSize="20sp"
+                android:fontFamily="@font/gilroy_regular"
+                android:textColor="@color/color_black"
+                android:textStyle="bold"/>
+
+        <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_name"
+                app:layout_constraintStart_toEndOf="@id/img_profile"
+                android:text="What would you love to do today?"
+                android:layout_marginTop="3dp"
+                android:textSize="10sp"
+                android:fontFamily="@font/gilroy_regular"
+                android:textColor="@color/color_black"/>
+
+        <androidx.appcompat.widget.SearchView
+                android:id="@+id/search_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/img_menu"
+                app:layout_constraintBottom_toBottomOf="@id/img_menu"
+                app:layout_constraintEnd_toStartOf="@id/img_menu"
+                android:layout_marginEnd="22dp"
+        />
+
+        <ImageView
+                android:id="@+id/img_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_home_menu"
+                app:layout_constraintTop_toTopOf="@id/img_profile"
+                app:layout_constraintBottom_toBottomOf="@id/img_profile"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="27dp"/>
+
+
+        <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_recent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/img_profile"
+                app:layout_constraintStart_toStartOf="@id/img_profile"
+                android:layout_marginTop="30dp"
+                android:text="Recent"
+                android:textSize="18sp"
+                android:fontFamily="@font/gilroy_regular"
+                android:textColor="@color/color_black"
+                android:textStyle="bold"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_recent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_recent"
+                app:layout_constraintStart_toStartOf="@id/tv_recent"
+                android:layout_marginTop="17dp"/>
+
+        <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_popular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/recycler_recent"
+                app:layout_constraintStart_toStartOf="@id/img_profile"
+                android:layout_marginTop="30dp"
+                android:text="Popular"
+                android:textSize="18sp"
+                android:fontFamily="@font/gilroy_regular"
+                android:textColor="@color/color_black"
+                android:textStyle="bold"/>
+
+        
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
