@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/nav_graph" app:startDestination="@id/onboardingFragment"
+            xmlns:tools="http://schemas.android.com/tools">
+
+    <fragment android:id="@+id/onboardingFragment"
+              android:name="com.zedux.ui.fragments.OnboardingFragment"
+              android:label="OnboardingFragment"
+              tools:layout="@layout/fragment_onboarding">
+        <action android:id="@+id/action_onboardingFragment_to_continueFragment"
+                app:destination="@id/continueFragment"
+        />
+    </fragment>
+
+    <fragment android:id="@+id/signUpFragment"
+              android:name="com.zedux.ui.fragments.SignUpFragment"
+              android:label="SignUpFragment"
+              tools:layout="@layout/fragment_signup">
+        <action android:id="@+id/action_signUpFragment_to_loginFragment"
+                app:popUpToInclusive="true"
+                app:popUpTo="@id/nav_graph"
+                app:destination="@id/loginFragment"/>
+        <action android:id="@+id/action_signUpFragment_to_selectCoursesFragment2"
+                app:destination="@id/selectCoursesFragment"
+                app:popUpToInclusive="true"
+                app:popUpTo="@id/nav_graph"/>
+    </fragment>
+
+    <fragment android:id="@+id/loginFragment"
+              android:name="com.zedux.ui.fragments.LoginFragment"
+              android:label="LoginFragment"
+              tools:layout="@layout/fragment_login">
+        <action android:id="@+id/action_loginFragment_to_homeFragment"
+                app:destination="@id/homeFragment"
+                app:popUpTo="@id/nav_graph"
+                app:popUpToInclusive="true"/>
+
+        <action android:id="@+id/action_loginFragment_to_signUpFragment"
+                app:popUpTo="@id/nav_graph"
+                app:popUpToInclusive="true"
+                app:destination="@id/signUpFragment"/>
+    </fragment>
+
+    <fragment android:id="@+id/continueFragment"
+              android:name="com.zedux.ui.fragments.ContinueFragment"
+              android:label="ContinueFragment"
+              tools:layout="@layout/fragment_continue">
+        <action android:id="@+id/action_continueFragment_to_signUpFragment"
+                app:destination="@id/signUpFragment"
+                app:popUpTo="@id/nav_graph"
+                app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment android:id="@+id/selectCoursesFragment"
+              android:name="com.zedux.ui.fragments.SelectCoursesFragment"
+              android:label="SelectCoursesFragment"
+              tools:layout="@layout/fragment_select_courses">
+        <action android:id="@+id/action_selectCoursesFragment_to_coursesSelectedFragment"
+                app:destination="@id/coursesSelectedFragment"/>
+        <action android:id="@+id/action_selectCoursesFragment_to_homeFragment" app:destination="@id/homeFragment"/>
+    </fragment>
+
+    <fragment android:id="@+id/coursesSelectedFragment"
+              android:name="com.zedux.ui.fragments.CoursesSelectedFragment"
+              android:label="CoursesSelectedFragment"
+              tools:layout="@layout/fragment_courses_selected">
+        <action android:id="@+id/action_coursesSelectedFragment_to_homeFragment" app:destination="@id/homeFragment"/>
+    </fragment>
+
+    <fragment android:id="@+id/communityFragment"
+              android:name="com.zedux.ui.fragments.CommunityFragment"
+              android:label="CommunityFragment"
+              tools:layout="@layout/fragment_community">
+        <action android:id="@+id/action_communityFragment_to_inboxFragment" app:destination="@id/inboxFragment"/>
+    </fragment>
+
+    <fragment android:id="@+id/profileFragment"
+              android:name="com.zedux.ui.fragments.ProfileFragment"
+              android:label="ProfileFragment"
+              tools:layout="@layout/fragment_profile"/>
+
+    <fragment android:id="@+id/inboxFragment"
+              android:name="com.zedux.ui.fragments.InboxFragment"
+              android:label="InboxFragment"
+              tools:layout="@layout/fragment_inbox">
+        <action android:id="@+id/action_inboxFragment_to_profileFragment" app:destination="@id/profileFragment"/>
+    </fragment>
+
+    <fragment android:id="@+id/homeFragment"
+              android:name="com.zedux.ui.fragments.HomeFragment"
+              android:label="HomeFragment"
+              tools:layout="@layout/fragment_home">
+        <action android:id="@+id/action_homeFragment_to_communityFragment" app:destination="@id/communityFragment"/>
+    </fragment>
+
+
+    <action android:id="@+id/action_global_homeFragment" app:destination="@id/homeFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true"/>
+
+    <action android:id="@+id/action_global_loginFragment" app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true"/>
+
+
+</navigation>

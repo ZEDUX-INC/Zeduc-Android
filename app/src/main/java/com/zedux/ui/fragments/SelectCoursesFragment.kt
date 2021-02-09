@@ -1,17 +1,18 @@
 package com.zedux.ui.fragments
 
+import android.content.Context
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.material.chip.Chip
-import com.google.android.material.chip.ChipDrawable
 import com.zedux.R
+import com.zedux.other.FragmentCallback
+import com.zedux.ui.MainActivity
 import kotlinx.android.synthetic.main.fragment_select_courses.*
 
-class SelectCoursesFragment : Fragment() {
+class SelectCoursesFragment : Fragment(R.layout.fragment_select_courses) {
+
+    private var callBack: FragmentCallback? = null
 
     companion object {
 
@@ -20,18 +21,29 @@ class SelectCoursesFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_select_courses, container, false)
-        return view
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        callBack = context as MainActivity
     }
+
+    override fun onDetach() {
+        super.onDetach()
+        callBack = null
+    }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         addChips()
+
+        tv_skip.setOnClickListener {
+            callBack?.navigateCoursesSelectedToHome()
+
+        }
+
+        btn_continue.setOnClickListener{
+            callBack?.navigateSelectCoursesToCoursesSelected()
+        }
     }
 
     private fun addChips() {

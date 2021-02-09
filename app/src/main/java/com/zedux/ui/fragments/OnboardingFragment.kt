@@ -1,5 +1,6 @@
 package com.zedux.ui.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,10 +9,13 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
 import androidx.viewpager2.widget.ViewPager2
 import com.zedux.R
 import com.zedux.adapters.OnboardingItemAdapter
 import com.zedux.data.OnboardItem
+import com.zedux.other.FragmentCallback
+import com.zedux.ui.MainActivity
 import kotlinx.android.synthetic.main.fragment_onboarding.*
 import kotlinx.android.synthetic.main.onboarding_item_container.*
 
@@ -25,11 +29,26 @@ class OnboardingFragment : Fragment() {
 
     private var page: Int = 0
 
+    private var callBack: FragmentCallback? = null
+
     companion object {
         fun newInstance(): OnboardingFragment {
             return OnboardingFragment()
         }
     }
+
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        callBack = context as MainActivity
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        callBack = null
+    }
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -85,16 +104,7 @@ class OnboardingFragment : Fragment() {
 
 
     private fun goToNextPage() {
-
-        val fragment = ContinueFragment.newInstance()
-        fragmentManager?.apply {
-            beginTransaction()
-                .replace(R.id.fragment_container, fragment)
-                .addToBackStack("")
-                .commit()
-        }
-
-
+        callBack?.navigateOnboardToContinue()
     }
 
 
@@ -126,7 +136,6 @@ class OnboardingFragment : Fragment() {
 
 
                btn_prev.visibility = if(position == 0) View.INVISIBLE else View.VISIBLE
-//
                 if(position == 2) {
                    goToNextPage()
                 }

@@ -17,7 +17,7 @@ import com.zedux.data.OnboardItem
 import com.zedux.ui.MainActivity
 import kotlinx.android.synthetic.main.fragment_onboarding.*
 
-class ProfileFragment : Fragment() {
+class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
 
     companion object {
@@ -28,32 +28,22 @@ class ProfileFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        requireActivity()
-            .onBackPressedDispatcher
-            .addCallback(this, object: OnBackPressedCallback(true) {
-                override fun handleOnBackPressed() {
-                    MainActivity.bottomNav.selectedItemId = R.id.nav_home
-                }
-            })
+//        requireActivity()
+//            .onBackPressedDispatcher
+//            .addCallback(this, object: OnBackPressedCallback(true) {
+//                override fun handleOnBackPressed() {
+//                    MainActivity.bottomNav.selectedItemId = R.id.nav_home
+//                }
+//            })
     }
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_profile, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         MainActivity.showBottomNavBar()
         setStatusBarColor(ContextCompat.getColor(requireContext(), R.color.color_white))
 
-
-        return view
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
     }
 

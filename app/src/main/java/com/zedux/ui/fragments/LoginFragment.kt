@@ -1,33 +1,45 @@
 package com.zedux.ui.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.viewpager2.widget.ViewPager2
-import com.zedux.R
-import com.zedux.adapters.OnboardingItemAdapter
-import com.zedux.data.OnboardItem
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import com.zedux.data.interfaces.AuthListener
 import com.zedux.databinding.FragmentLoginBinding
+import com.zedux.other.FragmentCallback
+import com.zedux.ui.MainActivity
 import com.zedux.ui.viewModels.AuthViewModel
-import kotlinx.android.synthetic.main.fragment_onboarding.*
 
 class LoginFragment : Fragment(), AuthListener {
 
     private lateinit var binding: FragmentLoginBinding
     private lateinit var viewModel: AuthViewModel
 
+    private lateinit var navHostFragment: NavHostFragment
+    private lateinit var navController: NavController
+
+    private var callBack: FragmentCallback? = null
 
     companion object {
         fun newInstance(): LoginFragment {
             return LoginFragment()
         }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        callBack = context as MainActivity
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        callBack = null
     }
 
     override fun onCreateView(
@@ -40,8 +52,6 @@ class LoginFragment : Fragment(), AuthListener {
         viewModel.authListener = this
         binding.viewModel = viewModel
 
-
-
         return binding.root
     }
 
@@ -49,10 +59,7 @@ class LoginFragment : Fragment(), AuthListener {
         super.onViewCreated(view, savedInstanceState)
 
         binding.tvRegister.setOnClickListener {
-            val fragment = SignUpFragment.newInstance()
-            fragmentManager?.beginTransaction()
-                ?.replace(R.id.fragment_container, fragment)
-                ?.commit()
+           callBack?.navigateLoginToSignUp()
         }
 
     }
@@ -63,10 +70,7 @@ class LoginFragment : Fragment(), AuthListener {
 
     override fun onSuccess() {
         Toast.makeText(requireContext(), "Success", Toast.LENGTH_SHORT).show()
-        val profileFragment = HomeFragment.newInstance()
-        fragmentManager?.beginTransaction()
-            ?.replace(R.id.fragment_container, profileFragment)
-            ?.commit()
+        callBack?.navigateToHome()
     }
 
     override fun onFailure(message: String) {

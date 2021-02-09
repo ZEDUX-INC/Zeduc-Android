@@ -1,6 +1,6 @@
 package com.zedux.ui.fragments
 
-import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,9 +9,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import com.zedux.R
 import com.zedux.data.interfaces.AuthListener
 import com.zedux.databinding.FragmentSignupBinding
+import com.zedux.other.FragmentCallback
 import com.zedux.ui.MainActivity
 import com.zedux.ui.viewModels.AuthViewModel
 
@@ -21,11 +24,25 @@ class SignUpFragment : Fragment(), AuthListener{
     private lateinit var binding: FragmentSignupBinding
     private lateinit var viewModel: AuthViewModel
 
+    private lateinit var navHostFragment: NavHostFragment
+    private lateinit var navController: NavController
+
+    private var callBack: FragmentCallback? = null
 
     companion object {
         fun newInstance(): SignUpFragment {
             return SignUpFragment()
         }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        callBack = context as MainActivity
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        callBack = null
     }
 
     override fun onCreateView(
@@ -34,8 +51,6 @@ class SignUpFragment : Fragment(), AuthListener{
         savedInstanceState: Bundle?
     ): View? {
        binding = FragmentSignupBinding.inflate(inflater, container, false)
-
-
 
         viewModel = ViewModelProvider(this).get(AuthViewModel::class.java)
         binding.viewModel = viewModel
@@ -49,14 +64,13 @@ class SignUpFragment : Fragment(), AuthListener{
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        navHostFragment = requireActivity().supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
+
         binding.tvLogin.setOnClickListener {
-            val fragment = LoginFragment.newInstance()
-            fragmentManager?.beginTransaction()
-                ?.replace(R.id.fragment_container, fragment)
-                ?.commit()
+            callBack?.navigateSignUpToLogin()
         }
-
-
     }
 
     override fun onStarted() {
@@ -65,10 +79,7 @@ class SignUpFragment : Fragment(), AuthListener{
 
     override fun onSuccess() {
         Toast.makeText(requireContext(), "Success", Toast.LENGTH_SHORT).show()
-        val profileFragment = HomeFragment.newInstance()
-        fragmentManager?.beginTransaction()
-            ?.replace(R.id.fragment_container, profileFragment)
-            ?.commit()
+        callBack?.navigateSignUpToSelectCourses()
     }
 
     override fun onFailure(message: String) {

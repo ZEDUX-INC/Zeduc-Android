@@ -44,11 +44,8 @@
         <item name="android:textColor">@color/color_black</item>
     </style>
     
-    <style name="customImageView" parent="AppTheme">
-        <item name="cornerFamilyBottomLeft">rounded</item>
-<!--        <item name="cornerFamily">rounded</item>-->
-<!--        <item name="cornerSize">50dp</item>-->
-        <item name="cornerSizeBottomLeft">48dp</item>
+    <style name="ShapeAppearanceOverlay.CornerSize10Percent" parent="">
+        <item name="cornerSizeBottomLeft">24dp</item>
     </style>
 
 </resources>

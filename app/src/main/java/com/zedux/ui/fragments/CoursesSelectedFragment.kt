@@ -2,22 +2,21 @@ package com.zedux.ui.fragments
 
 import android.content.Context
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.zedux.R
 import com.zedux.other.FragmentCallback
 import com.zedux.ui.MainActivity
-import kotlinx.android.synthetic.main.fragment_continue.*
+import kotlinx.android.synthetic.main.fragment_select_courses.*
 
-class ContinueFragment : Fragment() {
+class CoursesSelectedFragment : Fragment(R.layout.fragment_courses_selected) {
 
     private var callBack: FragmentCallback? = null
 
     companion object {
-        fun newInstance(): ContinueFragment {
-            return ContinueFragment()
+
+        fun newInstance(): CoursesSelectedFragment {
+            return CoursesSelectedFragment()
         }
     }
 
@@ -31,26 +30,11 @@ class ContinueFragment : Fragment() {
         callBack = null
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_continue, container, false)
-
-
-        return view
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        btn_tutor.setOnClickListener {
-            callBack?.navigateContinueToSignUp()
-        }
-
-        btn_student.setOnClickListener {
-            callBack?.navigateContinueToSignUp()
+        btn_continue.setOnClickListener{
+            callBack?.navigateCoursesSelectedToHome()
         }
 
     }
