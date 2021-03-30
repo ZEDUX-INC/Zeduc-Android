@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_appearance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Appearance"
+                    android:textColor="@color/color_black"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginTop="35dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+            />
+
+            <ImageView
+                    android:id="@+id/backArrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_back_arrow"
+                    android:layout_marginStart="24dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_appearance"/>
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_system_bg"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/img_white_bg"
+                    android:layout_marginTop="47dp"
+                    android:layout_marginStart="28dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_appearance"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_system"
+                    app:layout_constraintTop_toTopOf="@id/img_system_bg"
+                    app:layout_constraintStart_toStartOf="@id/img_system_bg"
+                    app:layout_constraintEnd_toEndOf="@id/img_system_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/img_system_bg"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_system"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/img_system_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/img_system_bg"
+                    android:layout_marginStart="17dp"
+                    app:layout_constraintStart_toEndOf="@id/img_system_bg"
+                    android:text="System Default"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textColor="@color/color_556_blue"/>
+
+            <ToggleButton
+                    android:id="@+id/toggle_system"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:layout_constraintTop_toTopOf="@id/img_system_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/img_system_bg"
+                    android:layout_marginEnd="25dp"
+                    android:checked="true"
+                    android:background="@drawable/toggle_selector"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_dark_mode"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/img_white_bg"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="28dp"
+                    app:layout_constraintTop_toBottomOf="@id/img_system_bg"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_dark"
+                    app:layout_constraintTop_toTopOf="@id/img_dark_mode"
+                    app:layout_constraintStart_toStartOf="@id/img_dark_mode"
+                    app:layout_constraintEnd_toEndOf="@id/img_dark_mode"
+                    app:layout_constraintBottom_toBottomOf="@id/img_dark_mode"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_dark_mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/img_dark_mode"
+                    app:layout_constraintBottom_toBottomOf="@id/img_dark_mode"
+                    android:layout_marginStart="17dp"
+                    app:layout_constraintStart_toEndOf="@id/img_dark_mode"
+                    android:text="Dark mode"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textColor="@color/color_556_blue"/>
+
+            <ToggleButton
+                    android:id="@+id/toggle_dark_mode"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:layout_constraintTop_toTopOf="@id/img_dark_mode"
+                    app:layout_constraintBottom_toBottomOf="@id/img_dark_mode"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/toggle_selector"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_light_mode"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/img_white_bg"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="28dp"
+                    app:layout_constraintTop_toBottomOf="@id/img_dark_mode"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_appearance"
+                    app:layout_constraintTop_toTopOf="@id/img_light_mode"
+                    app:layout_constraintStart_toStartOf="@id/img_light_mode"
+                    app:layout_constraintEnd_toEndOf="@id/img_light_mode"
+                    app:layout_constraintBottom_toBottomOf="@id/img_light_mode"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_light_mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/img_light_mode"
+                    app:layout_constraintBottom_toBottomOf="@id/img_light_mode"
+                    android:layout_marginStart="17dp"
+                    app:layout_constraintStart_toEndOf="@id/img_light_mode"
+                    android:text="Light mode"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:textColor="@color/color_556_blue"/>
+
+            <ToggleButton
+                    android:id="@+id/toggle_light_mode"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:layout_constraintTop_toTopOf="@id/img_light_mode"
+                    app:layout_constraintBottom_toBottomOf="@id/img_light_mode"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/toggle_selector"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</layout>
