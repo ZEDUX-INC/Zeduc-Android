@@ -48,4 +48,9 @@
         <item name="cornerSizeBottomLeft">24dp</item>
     </style>
 
+    <style name="ShapeAppearanceOverlay.CornerSizeAll" parent="">
+        <item name="cornerSize">24dp</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
 </resources>
