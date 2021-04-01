@@ -44,13 +44,17 @@
         <item name="android:textColor">@color/color_black</item>
     </style>
     
-    <style name="ShapeAppearanceOverlay.CornerSize10Percent" parent="">
+    <style name="ShapeAppearanceOverlay.CornerSize10PercentBottom" parent="">
         <item name="cornerSizeBottomLeft">24dp</item>
     </style>
+
 
     <style name="ShapeAppearanceOverlay.CornerSizeAll" parent="">
         <item name="cornerSize">24dp</item>
         <item name="cornerFamily">rounded</item>
+
+    <style name="ShapeAppearanceOverlay.CornerSize10Percent" parent="">
+        <item name="cornerSize">24dp</item>
     </style>
 
 </resources>

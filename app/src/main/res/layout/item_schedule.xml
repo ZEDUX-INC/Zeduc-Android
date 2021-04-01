@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+        <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="235dp"
+                app:cardCornerRadius="48dp"
+                android:backgroundTint="#EF5A39"
+                android:padding="10dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/image_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:src="@drawable/schedule_img"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.CornerSize10PercentBottom"
+                />
+
+                <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/image_view"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:textColor="@color/color_white"
+                        android:textSize="12sp"
+                        android:layout_marginEnd="50dp"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:text="Saturday 11:00AM"
+                        android:layout_marginTop="26dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/tv_time"
+                        app:layout_constraintStart_toEndOf="@id/image_view"
+                        app:layout_constraintBottom_toTopOf="@id/tv_time_left"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="24dp"
+                        android:textColor="@color/color_white"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:textStyle="bold"
+                        android:textSize="24sp"
+                        android:text="Read Physics Past question"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_time_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/image_view"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:textColor="@color/color_white"
+                        android:textSize="12sp"
+                        android:layout_marginEnd="50dp"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:text="4 hour"
+                        android:layout_marginBottom="26dp"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+</layout>
+
