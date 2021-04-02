@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/tutor_rounded_bg"
+    android:layout_marginStart="16dp"
+    android:layout_marginBottom="12dp"
+    android:layout_marginEnd="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/img_tutor"
+        style="@style/ShapeAppearanceOverlay.CornerSizeRightBottomTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/schedule_img"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_name_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/gilroy_regular"
+        android:text="Name:"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/img_tutor"
+        app:layout_constraintTop_toTopOf="@+id/img_tutor" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/gilroy_regular"
+        android:maxLength="20"
+        android:text="Sarah O'connor"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_name_prompt"
+        app:layout_constraintStart_toEndOf="@+id/tv_name_prompt" />
+
+    <TextView
+        android:id="@+id/tv_speciality_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/gilroy_regular"
+        android:text="Speciality:"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/img_tutor"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name_prompt" />
+
+    <TextView
+        android:id="@+id/tv_speciality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/gilroy_regular"
+        android:maxLength="20"
+        android:text="Physics, Maths, English"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_speciality_prompt"
+        app:layout_constraintStart_toEndOf="@+id/tv_speciality_prompt" />
+
+    <TextView
+        android:id="@+id/tv_availability_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/gilroy_regular"
+        android:text="Availability:"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/img_tutor"
+        app:layout_constraintTop_toBottomOf="@id/tv_speciality_prompt" />
+
+    <TextView
+        android:id="@+id/tv_availability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/gilroy_regular"
+        android:maxLength="20"
+        android:text="Mon, Wed, Thurs"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_availability_prompt"
+        app:layout_constraintStart_toEndOf="@+id/tv_availability_prompt" />
+
+    <TextView
+        android:id="@+id/tv_rate_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/gilroy_regular"
+        android:text="Rate:"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/img_tutor"
+        app:layout_constraintTop_toBottomOf="@+id/tv_availability_prompt" />
+
+    <TextView
+        android:id="@+id/tv_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/gilroy_regular"
+        android:text="NGN 2000/Hr"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_rate_prompt"
+        app:layout_constraintStart_toEndOf="@+id/tv_rate_prompt" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
